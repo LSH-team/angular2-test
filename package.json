@@ -1,5 +1,5 @@
 {
-  "name": "angular-tour-of-heroes",
+  "name": "angular2-test",
   "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
