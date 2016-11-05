@@ -36,7 +36,6 @@ import { Component, Input, trigger, state, style, transition, animate } from '@a
     ]
 })
 
-
 export class TestComponent {
     isActive: boolean = true;
     firstName: string = 'test';
