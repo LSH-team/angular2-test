@@ -14,6 +14,7 @@ var app_component_1 = require("./app.component");
 var contact_module_1 = require("./contact/contact.module");
 var core_module_1 = require("./core/core.module");
 var app_routing_module_1 = require("./app-routing.module");
+var highlight_directive_1 = require("./highlight.directive");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,6 +30,7 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
+            highlight_directive_1.HighlightDirective
         ],
         bootstrap: [app_component_1.AppComponent]
     }),

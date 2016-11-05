@@ -8,6 +8,8 @@ import { CoreModule } from  './core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { HighlightDirective } from './highlight.directive';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -17,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
     ],
     declarations: [
         AppComponent,
+        HighlightDirective
     ],
     bootstrap: [ AppComponent ]
 })
