@@ -1,0 +1,49 @@
+.font-color {
+    color: darkred;
+}
+
+[class*='div-'] {
+    width: 0;
+    height: 0;
+    border: 50px transparent solid;
+    border-top-color: black;
+    /*border-left: 50px solid red;*/
+    /*border-right: 50px solid purple;*/
+    /*border-top: 50px solid black;*/
+    /*border-bottom: 50px solid blue;*/
+}
+
+.test {
+    position: relative;
+    width:60px;
+    height: 20px;
+    border:black 1px solid;
+    border-radius:5px;
+    background: rgba(245,245,245,1);
+    margin-top:10px;
+ }
+.test:before,.test:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top:3px;
+    width: 0;
+    height: 0;
+    border:6px transparent solid;
+}
+.test:before{
+    left:-11px;
+    border-right-color: rgba(245,245,245,1);
+    z-index:1
+}
+.test:after{
+    left:-12px;
+    border-right-color: red;
+    z-index: 0
+}
+
+.animation {
+    width: 6rem;
+    height:4rem;
+    background-color: whitesmoke;
+}
