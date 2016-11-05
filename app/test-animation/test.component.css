@@ -46,4 +46,8 @@
     width: 6rem;
     height:4rem;
     background-color: whitesmoke;
+    margin-top: 2px;
+    display: block;
+    line-height: 4rem;
+    text-align: center;
 }
