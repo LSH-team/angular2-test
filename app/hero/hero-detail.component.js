@@ -19,6 +19,7 @@ var HeroDetailComponent = (function () {
     ;
     HeroDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
+        console.log(this.route);
         var id = parseInt(this.route.snapshot.params["id"], 10);
         this.heroService.getHero(id)
             .then(function (hero) { return _this.hero = hero; });

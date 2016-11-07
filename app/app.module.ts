@@ -10,16 +10,24 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HighlightDirective } from './highlight.directive';
 
+import { AdminModule } from './admin/admin.module';
+
+import { LoginComponent } from './login.component';
+import { LoginRoutingModule } from './login-routing.module';
+
 @NgModule({
     imports: [
         BrowserModule,
         AppRoutingModule,
         ContactModule,
         CoreModule.forRoot({userName: 'Lsh'}),
+        AdminModule,
+        LoginRoutingModule
     ],
     declarations: [
         AppComponent,
         HighlightDirective,
+        LoginComponent
     ],
     bootstrap: [ AppComponent ]
 })

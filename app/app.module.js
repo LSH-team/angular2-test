@@ -15,6 +15,9 @@ var contact_module_1 = require("./contact/contact.module");
 var core_module_1 = require("./core/core.module");
 var app_routing_module_1 = require("./app-routing.module");
 var highlight_directive_1 = require("./highlight.directive");
+var admin_module_1 = require("./admin/admin.module");
+var login_component_1 = require("./login.component");
+var login_routing_module_1 = require("./login-routing.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,10 +30,13 @@ AppModule = __decorate([
             app_routing_module_1.AppRoutingModule,
             contact_module_1.ContactModule,
             core_module_1.CoreModule.forRoot({ userName: 'Lsh' }),
+            admin_module_1.AdminModule,
+            login_routing_module_1.LoginRoutingModule
         ],
         declarations: [
             app_component_1.AppComponent,
             highlight_directive_1.HighlightDirective,
+            login_component_1.LoginComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     }),

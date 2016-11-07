@@ -23,6 +23,7 @@ import {Component} from '@angular/core';
             <a routerLink="/contact" routerLinkActive="active">Contact</a>
             <a routerLink="/crisis" routerLinkActive="active">Crisis</a>
             <a routerLink="/test" routerLinkActive="actice">Test</a>
+            <a routerLink="/admin" routerLinkActive="actice">Admin</a>
         </nav>
         <router-outlet></router-outlet>
          `,
