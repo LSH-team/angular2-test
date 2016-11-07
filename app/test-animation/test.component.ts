@@ -1,5 +1,6 @@
 import {Component, Input, trigger, state, style, transition, animate, keyframes, group} from '@angular/core';
 
+
 @Component({
     template: `
             <br/>
@@ -10,13 +11,18 @@ import {Component, Input, trigger, state, style, transition, animate, keyframes,
             <div [ngClass]="{'test': isActive }"></div>
             hello {{firstName}}
             <br/>
+            <h3>angular style</h3>
             <span *ngIf="firstName">Lsh</span>
             <br/>
             <div>
                 <span class="animation" *ngFor="let item of test" [@flyInOut]="item.state" (@flyInOut.start)="animationStarted($event)" (@flyInOut.done)="animationDone($event)" (click)="onToggleState(item)">{{item.name}}</span>
             </div>
+            <hero-birthday></hero-birthday>
+            <p>Super power boost: {{2 | exponentialStrength: 10}}</p>
+            <pow-boost-calculator></pow-boost-calculator>
             `,
     styleUrls: ['test.component.css'],
+    styles: [ 'span { color: green;}', 'h3 { background-color: yellowgreen;}'],
     moduleId: module.id,
     animations: [
         trigger('testState', [

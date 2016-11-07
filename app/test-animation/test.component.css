@@ -51,3 +51,12 @@
     line-height: 4rem;
     text-align: center;
 }
+
+:host-context(.theme-light) span {
+    background-color: darkgoldenrod;
+}
+
+:host /deep/ span {
+    color: white;
+    font-weight: 700;
+}

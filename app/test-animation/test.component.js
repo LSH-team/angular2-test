@@ -39,8 +39,9 @@ var TestComponent = (function () {
 }());
 TestComponent = __decorate([
     core_1.Component({
-        template: "\n            <br/>\n            <div>\n                <input [class.font-color]=\"firstName\" [style.width.rem]=\"width\" [(ngModel)]=\"firstName\"/>\n            </div>\n            <div class=\"div-test\"></div>\n            <div [ngClass]=\"{'test': isActive }\"></div>\n            hello {{firstName}}\n            <br/>\n            <span *ngIf=\"firstName\">Lsh</span>\n            <br/>\n            <div>\n                <span class=\"animation\" *ngFor=\"let item of test\" [@flyInOut]=\"item.state\" (@flyInOut.start)=\"animationStarted($event)\" (@flyInOut.done)=\"animationDone($event)\" (click)=\"onToggleState(item)\">{{item.name}}</span>\n            </div>\n            ",
+        template: "\n            <br/>\n            <div>\n                <input [class.font-color]=\"firstName\" [style.width.rem]=\"width\" [(ngModel)]=\"firstName\"/>\n            </div>\n            <div class=\"div-test\"></div>\n            <div [ngClass]=\"{'test': isActive }\"></div>\n            hello {{firstName}}\n            <br/>\n            <h3>angular style</h3>\n            <span *ngIf=\"firstName\">Lsh</span>\n            <br/>\n            <div>\n                <span class=\"animation\" *ngFor=\"let item of test\" [@flyInOut]=\"item.state\" (@flyInOut.start)=\"animationStarted($event)\" (@flyInOut.done)=\"animationDone($event)\" (click)=\"onToggleState(item)\">{{item.name}}</span>\n            </div>\n            <hero-birthday></hero-birthday>\n            <p>Super power boost: {{2 | exponentialStrength: 10}}</p>\n            <pow-boost-calculator></pow-boost-calculator>\n            ",
         styleUrls: ['test.component.css'],
+        styles: ['span { color: green;}', 'h3 { background-color: yellowgreen;}'],
         moduleId: module.id,
         animations: [
             core_1.trigger('testState', [

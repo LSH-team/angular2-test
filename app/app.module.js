@@ -30,7 +30,7 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            highlight_directive_1.HighlightDirective
+            highlight_directive_1.HighlightDirective,
         ],
         bootstrap: [app_component_1.AppComponent]
     }),

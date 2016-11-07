@@ -19,7 +19,7 @@ import { HighlightDirective } from './highlight.directive';
     ],
     declarations: [
         AppComponent,
-        HighlightDirective
+        HighlightDirective,
     ],
     bootstrap: [ AppComponent ]
 })
