@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import {CanActivate, Router,
+        ActivatedRouteSnapshot, RouterStateSnapshot,
+        CanActivateChild, NavigationExtras,
+        CanLoad, Route
+        } from '@angular/router';
 
 import { AuthService } from './auth.service';
 
 @Injectable()
 
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     constructor(private authService: AuthService, private router: Router){}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
@@ -23,7 +27,17 @@ export class AuthGuard implements CanActivate {
         }
         this.authService.redirectUrl = url;
 
-        this.router.navigate(['/login']);
+        let sessionId = 123456789;
+        let navigationExtras: NavigationExtras = {
+            queryParams: { 'session_id': sessionId},
+            fragment: 'anchor'
+        }
+        this.router.navigate(['/login'], navigationExtras);
         return false;
+    }
+
+    canLoad(route: Route): boolean {
+        let url = `/${route.path}`;
+        return this.checkLogin(url);
     }
 }

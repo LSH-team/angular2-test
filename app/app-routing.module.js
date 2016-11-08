@@ -10,12 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var auth_guard_service_1 = require("./auth-guard.service");
+var selective_preload_strategy_1 = require("./selective-preload-strategy");
 var routes = [
     { path: '', redirectTo: '/contact', pathMatch: 'full' },
     { path: 'heroes', loadChildren: 'app/hero/hero.module#HeroModule' },
     { path: 'crisis', loadChildren: 'app/crisis/crisis.module#CrisisModule' },
     { path: 'test', loadChildren: 'app/test-animation/test.module#TestModule' },
-    { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule' }
+    { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule', canLoad: [auth_guard_service_1.AuthGuard], data: { preload: true } }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -24,8 +26,11 @@ var AppRoutingModule = (function () {
 }());
 AppRoutingModule = __decorate([
     core_1.NgModule({
-        imports: [router_1.RouterModule.forRoot(routes)],
-        exports: [router_1.RouterModule]
+        imports: [router_1.RouterModule.forRoot(routes, { userHash: true })],
+        exports: [router_1.RouterModule],
+        providers: [
+            selective_preload_strategy_1.PreloadSelectedModules
+        ]
     }),
     __metadata("design:paramtypes", [])
 ], AppRoutingModule);
