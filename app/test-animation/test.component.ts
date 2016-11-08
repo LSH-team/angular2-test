@@ -1,6 +1,5 @@
 import {Component, Input, trigger, state, style, transition, animate, keyframes, group} from '@angular/core';
 
-
 @Component({
     template: `
             <br/>
@@ -16,6 +15,11 @@ import {Component, Input, trigger, state, style, transition, animate, keyframes,
             <br/>
             <div>
                 <span class="animation" *ngFor="let item of test" [@flyInOut]="item.state" (@flyInOut.start)="animationStarted($event)" (@flyInOut.done)="animationDone($event)" (click)="onToggleState(item)">{{item.name}}</span>
+                <div [ngSwitch]="statue">
+                    <p *ngSwitchCase="1">1</p>
+                    <p *ngSwitchCase="2">2</p>
+                    <p *ngSwitchDefault>Unknown</p>
+                </div>
             </div>
             <hero-birthday></hero-birthday>
             <p>Super power boost: {{2 | exponentialStrength: 10}}</p>
@@ -149,6 +153,8 @@ export class TestComponent {
         { name: 'ss', state: this.state},
         { name: 'tt', state: this.state}
     ];
+
+    statue = this.test[0].name == 'ss'? 1:2;
 
     onToggleState(item): void {
         if (item.state == 'in') {

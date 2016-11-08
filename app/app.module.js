@@ -16,8 +16,10 @@ var core_module_1 = require("./core/core.module");
 var app_routing_module_1 = require("./app-routing.module");
 var highlight_directive_1 = require("./highlight.directive");
 var admin_module_1 = require("./admin/admin.module");
-var login_component_1 = require("./login/login.component.ts");
-var login_routing_module_1 = require("./login/login-routing.module.ts");
+var login_component_1 = require("./login/login.component");
+var login_routing_module_1 = require("./login/login-routing.module");
+var inner_html_binding_component_1 = require("./safe/inner-html-binding.component");
+var bypass_security_component_1 = require("./safe/bypass-security.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,7 +38,9 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             highlight_directive_1.HighlightDirective,
-            login_component_1.LoginComponent
+            login_component_1.LoginComponent,
+            inner_html_binding_component_1.InnerHtmlBindingComponent,
+            bypass_security_component_1.BypassSecurityComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     }),

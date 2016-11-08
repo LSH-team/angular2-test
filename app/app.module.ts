@@ -15,6 +15,9 @@ import { AdminModule } from './admin/admin.module';
 import { LoginComponent } from './login/login.component';
 import { LoginRoutingModule } from './login/login-routing.module';
 
+import { InnerHtmlBindingComponent } from './safe/inner-html-binding.component';
+import { BypassSecurityComponent } from './safe/bypass-security.component';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -27,7 +30,9 @@ import { LoginRoutingModule } from './login/login-routing.module';
     declarations: [
         AppComponent,
         HighlightDirective,
-        LoginComponent
+        LoginComponent,
+        InnerHtmlBindingComponent,
+        BypassSecurityComponent
     ],
     bootstrap: [ AppComponent ]
 })
