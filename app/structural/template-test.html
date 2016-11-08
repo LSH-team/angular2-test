@@ -1,0 +1,32 @@
+<div>
+    <button (click)="isVisible = !isVisible">show | hide</button>
+    <heavy-loader [style.display]="isVisible? 'inline': 'none'" [logs]="logs"></heavy-loader>
+</div>
+
+<div>
+    <button (click)="condition = !condition">if | !if</button>
+    <heavy-loader *ngIf="condition" [logs]="logs"></heavy-loader>
+</div>
+
+<h4>heavy-loader</h4>
+<div *ngFor="let message of logs">{{message}}</div>
+
+<p>
+    Hip!
+</p>
+<template>
+    <p>
+        Hip!
+    </p>
+</template>
+<p>
+    Hooray!
+</p>
+
+<p *myUnless="condition">
+    condition is false and myUnless is true.
+</p>
+
+<p *myUnless="!condition">
+    condition is true and myUnless is false.
+</p>

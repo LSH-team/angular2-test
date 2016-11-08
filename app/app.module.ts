@@ -17,6 +17,10 @@ import { LoginRoutingModule } from './login/login-routing.module';
 
 import { InnerHtmlBindingComponent } from './safe/inner-html-binding.component';
 import { BypassSecurityComponent } from './safe/bypass-security.component';
+import { HeavyLoaderComponent } from './structural/heavy-loader.component';
+import { TemplateTestComponent } from './structural/template-test.component';
+
+import { UnlessDirective } from './structural/unless.directive';
 
 @NgModule({
     imports: [
@@ -25,14 +29,17 @@ import { BypassSecurityComponent } from './safe/bypass-security.component';
         ContactModule,
         CoreModule.forRoot({userName: 'Lsh'}),
         AdminModule,
-        LoginRoutingModule
+        LoginRoutingModule,
     ],
     declarations: [
         AppComponent,
         HighlightDirective,
         LoginComponent,
         InnerHtmlBindingComponent,
-        BypassSecurityComponent
+        BypassSecurityComponent,
+        HeavyLoaderComponent,
+        TemplateTestComponent,
+        UnlessDirective
     ],
     bootstrap: [ AppComponent ]
 })

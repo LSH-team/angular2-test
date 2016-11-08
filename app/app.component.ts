@@ -6,6 +6,7 @@ import {Component} from '@angular/core';
         <app-title [subtitle]="subtitle"></app-title>
         <inner-html></inner-html>
         <bypass-security></bypass-security>
+        <template-test></template-test>
         <h1>My First Attribute Directive</h1>
         <h4>Pick a highlight color</h4>
         <div>

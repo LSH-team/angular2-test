@@ -16,9 +16,9 @@ import {Component, Input, trigger, state, style, transition, animate, keyframes,
             <div>
                 <span class="animation" *ngFor="let item of test" [@flyInOut]="item.state" (@flyInOut.start)="animationStarted($event)" (@flyInOut.done)="animationDone($event)" (click)="onToggleState(item)">{{item.name}}</span>
                 <div [ngSwitch]="statue">
-                    <p *ngSwitchCase="1">1</p>
-                    <p *ngSwitchCase="2">2</p>
-                    <p *ngSwitchDefault>Unknown</p>
+                    <template [ngSwitchCase]="1">1</template>
+                    <template [ngSwitchCase]="2">2</template>
+                    <template ngSwitchDefault>Unknown</template>
                 </div>
             </div>
             <hero-birthday></hero-birthday>

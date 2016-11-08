@@ -20,6 +20,9 @@ var login_component_1 = require("./login/login.component");
 var login_routing_module_1 = require("./login/login-routing.module");
 var inner_html_binding_component_1 = require("./safe/inner-html-binding.component");
 var bypass_security_component_1 = require("./safe/bypass-security.component");
+var heavy_loader_component_1 = require("./structural/heavy-loader.component");
+var template_test_component_1 = require("./structural/template-test.component");
+var unless_directive_1 = require("./structural/unless.directive");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,14 +36,17 @@ AppModule = __decorate([
             contact_module_1.ContactModule,
             core_module_1.CoreModule.forRoot({ userName: 'Lsh' }),
             admin_module_1.AdminModule,
-            login_routing_module_1.LoginRoutingModule
+            login_routing_module_1.LoginRoutingModule,
         ],
         declarations: [
             app_component_1.AppComponent,
             highlight_directive_1.HighlightDirective,
             login_component_1.LoginComponent,
             inner_html_binding_component_1.InnerHtmlBindingComponent,
-            bypass_security_component_1.BypassSecurityComponent
+            bypass_security_component_1.BypassSecurityComponent,
+            heavy_loader_component_1.HeavyLoaderComponent,
+            template_test_component_1.TemplateTestComponent,
+            unless_directive_1.UnlessDirective
         ],
         bootstrap: [app_component_1.AppComponent]
     }),
