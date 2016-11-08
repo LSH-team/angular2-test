@@ -12,8 +12,8 @@ import { HighlightDirective } from './highlight.directive';
 
 import { AdminModule } from './admin/admin.module';
 
-import { LoginComponent } from './login.component';
-import { LoginRoutingModule } from './login-routing.module';
+import { LoginComponent } from './login/login.component';
+import { LoginRoutingModule } from './login/login-routing.module';
 
 @NgModule({
     imports: [

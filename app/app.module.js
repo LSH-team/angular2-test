@@ -16,8 +16,8 @@ var core_module_1 = require("./core/core.module");
 var app_routing_module_1 = require("./app-routing.module");
 var highlight_directive_1 = require("./highlight.directive");
 var admin_module_1 = require("./admin/admin.module");
-var login_component_1 = require("./login.component");
-var login_routing_module_1 = require("./login-routing.module");
+var login_component_1 = require("./login/login.component.ts");
+var login_routing_module_1 = require("./login/login-routing.module.ts");
 var AppModule = (function () {
     function AppModule() {
     }
