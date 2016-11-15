@@ -6,7 +6,7 @@ import {HeroService, Hero} from './hero.service';
     template: `
             <h3 highlight>Hero Detail</h3>
             <div *ngIf="hero">
-                <div>Id: {{hero.id}}</div><br/>
+                <div>Id: {{hero.id}}{{hero.name}}</div><br/>
                 <label>Name:
                     <input [(ngModel)]="hero.name"/>
                 </label>

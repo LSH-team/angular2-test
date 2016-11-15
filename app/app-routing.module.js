@@ -16,7 +16,7 @@ var routes = [
     { path: '', redirectTo: '/contact', pathMatch: 'full' },
     { path: 'heroes', loadChildren: 'app/hero/hero.module#HeroModule' },
     { path: 'crisis', loadChildren: 'app/crisis/crisis.module#CrisisModule' },
-    { path: 'test', loadChildren: 'app/test-animation/test.module#TestModule' },
+    { path: 'test', loadChildren: 'app/test/test.module#TestModule' },
     { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule', canLoad: [auth_guard_service_1.AuthGuard], data: { preload: true } }
 ];
 var AppRoutingModule = (function () {

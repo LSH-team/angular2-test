@@ -14,4 +14,11 @@ export class HeroComponent {
     constructor(userService: UserService){
         this.userName = userService.userName;
     }
+
+    ngOnInit() {
+        let mapA = {a: 5, b: 6, c: 7};
+        let b = {...mapA, d: 8};
+
+        console.log(b);
+    }
 }

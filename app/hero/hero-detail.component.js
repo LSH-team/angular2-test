@@ -28,7 +28,7 @@ var HeroDetailComponent = (function () {
 }());
 HeroDetailComponent = __decorate([
     core_1.Component({
-        template: "\n            <h3 highlight>Hero Detail</h3>\n            <div *ngIf=\"hero\">\n                <div>Id: {{hero.id}}</div><br/>\n                <label>Name:\n                    <input [(ngModel)]=\"hero.name\"/>\n                </label>\n            </div>\n            <br/>\n            <a routerLink=\"../\">Hero List</a>\n        "
+        template: "\n            <h3 highlight>Hero Detail</h3>\n            <div *ngIf=\"hero\">\n                <div>Id: {{hero.id}}{{hero.name}}</div><br/>\n                <label>Name:\n                    <input [(ngModel)]=\"hero.name\"/>\n                </label>\n            </div>\n            <br/>\n            <a routerLink=\"../\">Hero List</a>\n        "
     }),
     __metadata("design:paramtypes", [hero_service_1.HeroService,
         router_1.ActivatedRoute])

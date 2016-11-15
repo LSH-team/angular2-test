@@ -16,6 +16,11 @@ var HeroComponent = (function () {
         this.userName = '';
         this.userName = userService.userName;
     }
+    HeroComponent.prototype.ngOnInit = function () {
+        var mapA = { a: 5, b: 6, c: 7 };
+        var b = { mapA: mapA, d: 8 };
+        console.log(b);
+    };
     return HeroComponent;
 }());
 HeroComponent = __decorate([
