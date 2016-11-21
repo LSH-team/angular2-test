@@ -1,4 +1,5 @@
 import {Component, Input, trigger, state, style, transition, animate, keyframes, group} from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     template: `
@@ -13,7 +14,7 @@ import {Component, Input, trigger, state, style, transition, animate, keyframes,
             <h3>angular style</h3>
             <span *ngIf="firstName">Lsh</span>
             <br/>
-            <div>
+            <div class="testNot">
                 <span class="animation" *ngFor="let item of test" [@flyInOut]="item.state" (@flyInOut.start)="animationStarted($event)" (@flyInOut.done)="animationDone($event)" (click)="onToggleState(item)">{{item.name}}</span>
                 <div [ngSwitch]="statue">
                     <template [ngSwitchCase]="1">1</template>
@@ -21,12 +22,15 @@ import {Component, Input, trigger, state, style, transition, animate, keyframes,
                     <template ngSwitchDefault>Unknown</template>
                 </div>
             </div>
-            <hero-birthday></hero-birthday>
-            <p>Super power boost: {{2 | exponentialStrength: 10}}</p>
+            <hero-birthday [inBirthday]="birthday" (outBirthday)="firstName = $event">
             <pow-boost-calculator></pow-boost-calculator>
+            </hero-birthday>
+            <p>Super power boost: {{2 | exponentialStrength: 10}}</p>
+            <svg:rect x="0" y="0" width="100" height="100"></svg:rect>
+            <button (click)="touch()" [ngClass]="{active: isActive}" [disabled]="isDisabled">link</button>
             `,
     styleUrls: ['test.component.css'],
-    styles: [ 'span { color: green;}', 'h3 { background-color: yellowgreen;}'],
+    styles: [ 'span { color: green;}', 'h3 { background-color: yellowgreen !important;}'],
     moduleId: module.id,
     animations: [
         trigger('testState', [
@@ -143,9 +147,11 @@ import {Component, Input, trigger, state, style, transition, animate, keyframes,
 })
 
 export class TestComponent {
+    isDisabled: boolean = false;
     isActive: boolean = true;
     firstName: string = 'test';
     width: number = 20;
+    birthday = new Date();
     private state: string='in';
 
     test = [
@@ -164,11 +170,22 @@ export class TestComponent {
         }
     }
 
+    source = Observable.of(1,2,3,4,5)
+        .subscribe(x => x % 2 === 0? console.log("Next: %s", x): '');
+
     animationStarted(event): void {
         console.log(event);
     }
 
     animationDone (event): void {
         console.log(event);
+    }
+
+    touch(): void {
+        console.log("touch");
+    }
+
+    out(str: string): void {
+        console.log(str);
     }
 }

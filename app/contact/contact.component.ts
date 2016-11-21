@@ -23,6 +23,7 @@ export class ContactComponent implements OnInit {
     ngOnInit() {
         this.contactService.getContacts()
             .then(contacts => {
+                console.log(contacts)
                 this.msg = '';
                 this.contacts = contacts;
                 this.contact = contacts[0];

@@ -60,3 +60,11 @@
     color: white;
     font-weight: 700;
 }
+
+.testNot:not(span) {
+    color: darkred;
+}
+
+h3 {
+    background-color: red;
+}

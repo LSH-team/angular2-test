@@ -9,11 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var Observable_1 = require("rxjs/Observable");
 var TestComponent = (function () {
     function TestComponent() {
+        this.isDisabled = false;
         this.isActive = true;
         this.firstName = 'test';
         this.width = 20;
+        this.birthday = new Date();
         this.state = 'in';
         this.test = [
             { name: 'll', state: this.state },
@@ -21,6 +24,8 @@ var TestComponent = (function () {
             { name: 'tt', state: this.state }
         ];
         this.statue = this.test[0].name == 'ss' ? 1 : 2;
+        this.source = Observable_1.Observable.of(1, 2, 3, 4, 5)
+            .subscribe(function (x) { return x % 2 === 0 ? console.log("Next: %s", x) : ''; });
     }
     TestComponent.prototype.onToggleState = function (item) {
         if (item.state == 'in') {
@@ -36,13 +41,19 @@ var TestComponent = (function () {
     TestComponent.prototype.animationDone = function (event) {
         console.log(event);
     };
+    TestComponent.prototype.touch = function () {
+        console.log("touch");
+    };
+    TestComponent.prototype.out = function (str) {
+        console.log(str);
+    };
     return TestComponent;
 }());
 TestComponent = __decorate([
     core_1.Component({
-        template: "\n            <br/>\n            <div>\n                <input [class.font-color]=\"firstName\" [style.width.rem]=\"width\" [(ngModel)]=\"firstName\"/>\n            </div>\n            <div class=\"div-test\"></div>\n            <div [ngClass]=\"{'test': isActive }\"></div>\n            hello {{firstName}}\n            <br/>\n            <h3>angular style</h3>\n            <span *ngIf=\"firstName\">Lsh</span>\n            <br/>\n            <div>\n                <span class=\"animation\" *ngFor=\"let item of test\" [@flyInOut]=\"item.state\" (@flyInOut.start)=\"animationStarted($event)\" (@flyInOut.done)=\"animationDone($event)\" (click)=\"onToggleState(item)\">{{item.name}}</span>\n                <div [ngSwitch]=\"statue\">\n                    <template [ngSwitchCase]=\"1\">1</template>\n                    <template [ngSwitchCase]=\"2\">2</template>\n                    <template ngSwitchDefault>Unknown</template>\n                </div>\n            </div>\n            <hero-birthday></hero-birthday>\n            <p>Super power boost: {{2 | exponentialStrength: 10}}</p>\n            <pow-boost-calculator></pow-boost-calculator>\n            ",
+        template: "\n            <br/>\n            <div>\n                <input [class.font-color]=\"firstName\" [style.width.rem]=\"width\" [(ngModel)]=\"firstName\"/>\n            </div>\n            <div class=\"div-test\"></div>\n            <div [ngClass]=\"{'test': isActive }\"></div>\n            hello {{firstName}}\n            <br/>\n            <h3>angular style</h3>\n            <span *ngIf=\"firstName\">Lsh</span>\n            <br/>\n            <div class=\"testNot\">\n                <span class=\"animation\" *ngFor=\"let item of test\" [@flyInOut]=\"item.state\" (@flyInOut.start)=\"animationStarted($event)\" (@flyInOut.done)=\"animationDone($event)\" (click)=\"onToggleState(item)\">{{item.name}}</span>\n                <div [ngSwitch]=\"statue\">\n                    <template [ngSwitchCase]=\"1\">1</template>\n                    <template [ngSwitchCase]=\"2\">2</template>\n                    <template ngSwitchDefault>Unknown</template>\n                </div>\n            </div>\n            <hero-birthday [inBirthday]=\"birthday\" (outBirthday)=\"firstName = $event\">\n            <pow-boost-calculator></pow-boost-calculator>\n            </hero-birthday>\n            <p>Super power boost: {{2 | exponentialStrength: 10}}</p>\n            <svg:rect x=\"0\" y=\"0\" width=\"100\" height=\"100\"></svg:rect>\n            <button (click)=\"touch()\" [ngClass]=\"{active: isActive}\" [disabled]=\"isDisabled\">link</button>\n            ",
         styleUrls: ['test.component.css'],
-        styles: ['span { color: green;}', 'h3 { background-color: yellowgreen;}'],
+        styles: ['span { color: green;}', 'h3 { background-color: yellowgreen !important;}'],
         moduleId: module.id,
         animations: [
             core_1.trigger('testState', [

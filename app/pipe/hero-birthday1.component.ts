@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
     selector: 'hero-birthday',
@@ -6,12 +6,15 @@ import { Component } from '@angular/core';
             <p>The hero's birthday is {{birthday | date | uppercase}}</p>
             <p>The hero's birthday is {{birthday | date:"MM/dd/yy"}}</p>
             <p>The hero's birthday is {{birthday | date:format | uppercase}}</p>
+            <p>The test hero's birthday is {{inBirthday | date: "MM/dd/yy hh:mm:ss"}}</p>
             <button (click)="toggleFormat()">Toggle Format</button>
         `,
 })
 
 export class HeroBirthdayComponent {
     birthday = new Date(2016, 11, 7);
+    @Input() inBirthday = '';
+    @Output() outBirthday = new EventEmitter();
 
     toggle = true;
 
@@ -21,5 +24,6 @@ export class HeroBirthdayComponent {
 
     toggleFormat() {
         this.toggle = !this.toggle;
+        this.outBirthday.emit("www");
     }
 }

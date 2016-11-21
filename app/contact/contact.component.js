@@ -22,6 +22,7 @@ var ContactComponent = (function () {
         var _this = this;
         this.contactService.getContacts()
             .then(function (contacts) {
+            console.log(contacts);
             _this.msg = '';
             _this.contacts = contacts;
             _this.contact = contacts[0];
