@@ -21,7 +21,7 @@ var HeroComponent = (function () {
 HeroComponent = __decorate([
     core_1.Component({
         template: "\n        <h2>Heroes of {{userName}}</h2>\n        <router-outlet></router-outlet>\n        ",
-        providers: [hero_service_1.HeroService]
+        providers: [hero_service_1.HeroService],
     }),
     __metadata("design:paramtypes", [user_service_1.UserService])
 ], HeroComponent);

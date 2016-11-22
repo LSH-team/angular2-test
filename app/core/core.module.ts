@@ -26,7 +26,7 @@ export class CoreModule {
         return {
             ngModule: CoreModule,
             providers: [
-                {provide: UserServiceConfig, useValue: config }
+                { provide: UserServiceConfig, useValue: config }
             ]
         };
     }

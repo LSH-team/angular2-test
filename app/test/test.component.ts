@@ -23,7 +23,7 @@ import { Observable } from 'rxjs/Observable';
                 </div>
             </div>
             <hero-birthday [inBirthday]="birthday" (outBirthday)="firstName = $event">
-            <pow-boost-calculator></pow-boost-calculator>
+                <pow-boost-calculator></pow-boost-calculator>
             </hero-birthday>
             <p>Super power boost: {{2 | exponentialStrength: 10}}</p>
             <svg:rect x="0" y="0" width="100" height="100"></svg:rect>

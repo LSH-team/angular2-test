@@ -22,7 +22,6 @@ export class LoginComponent {
 
     setMessage() {
         this.message = 'Logged ' + (this.authService.isLoggedIn? 'in': 'out');
-        console.log(this.authService.isLoggedIn)
     }
 
     login() {
@@ -36,7 +35,7 @@ export class LoginComponent {
                     let navigationExtras: NavigationExtras = {
                         preserveFragment: true,
                         preserveQueryParams: true
-                    }
+                    };
                     this.router.navigate([redirect], navigationExtras);
                 }
             })

@@ -7,7 +7,7 @@ import { UserService } from '../core/user.service';
         <h2>Heroes of {{userName}}</h2>
         <router-outlet></router-outlet>
         `,
-    providers: [ HeroService ]
+    providers: [ HeroService ],
 })
 export class HeroComponent {
     userName = '';
