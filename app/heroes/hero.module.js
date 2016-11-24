@@ -9,31 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var hero_component_1 = require("./hero.component");
-var hero_list_component_1 = require("./hero-list.component");
-var hero_detail_component_1 = require("./hero-detail.component");
-var routes = [
-    {
-        path: '',
-        component: hero_component_1.HeroComponent,
-        children: [
-            { path: '', component: hero_list_component_1.HeroListComponent },
-            { path: ':id', component: hero_detail_component_1.HeroDetailComponent },
-        ]
-    },
-];
-var HeroRoutingModule = (function () {
-    function HeroRoutingModule() {
+var shared_module_1 = require("../shared/shared.module");
+// import { HeroDetailComponent } from "./hero-detail.component";
+// import { HeroListComponent } from './hero-list.component';
+// import { HeroComponent } from "./hero.component";
+// import { HeroRoutingModule } from './hero-routing.module';
+var _1 = require("../heroes/");
+var HeroModule = (function () {
+    function HeroModule() {
     }
-    return HeroRoutingModule;
+    return HeroModule;
 }());
-HeroRoutingModule = __decorate([
+HeroModule = __decorate([
     core_1.NgModule({
-        imports: [router_1.RouterModule.forChild(routes)],
-        exports: [router_1.RouterModule]
+        imports: [shared_module_1.SharedModule, _1.HeroRoutingModule],
+        declarations: [
+            _1.HeroComponent,
+            _1.HeroDetailComponent,
+            _1.HeroListComponent,
+        ]
     }),
     __metadata("design:paramtypes", [])
-], HeroRoutingModule);
-exports.HeroRoutingModule = HeroRoutingModule;
-//# sourceMappingURL=hero-routing.module.js.map
+], HeroModule);
+exports.HeroModule = HeroModule;
+//# sourceMappingURL=hero.module.js.map

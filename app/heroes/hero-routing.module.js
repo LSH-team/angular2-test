@@ -9,26 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var shared_module_1 = require("../shared/shared.module");
-var hero_detail_component_1 = require("./hero-detail.component");
-var hero_list_component_1 = require("./hero-list.component");
+var router_1 = require("@angular/router");
 var hero_component_1 = require("./hero.component");
-var hero_routing_module_1 = require("./hero-routing.module");
-var HeroModule = (function () {
-    function HeroModule() {
-    }
-    return HeroModule;
-}());
-HeroModule = __decorate([
-    core_1.NgModule({
-        imports: [shared_module_1.SharedModule, hero_routing_module_1.HeroRoutingModule],
-        declarations: [
-            hero_component_1.HeroComponent,
-            hero_detail_component_1.HeroDetailComponent,
-            hero_list_component_1.HeroListComponent,
+var hero_list_component_1 = require("./hero-list.component");
+var hero_detail_component_1 = require("./hero-detail.component");
+// import { HeroComponent, HeroListComponent, HeroDetailComponent } from '../heroes/';
+var routes = [
+    {
+        path: '',
+        component: hero_component_1.HeroComponent,
+        children: [
+            { path: '', component: hero_list_component_1.HeroListComponent },
+            { path: ':id', component: hero_detail_component_1.HeroDetailComponent },
         ]
+    },
+];
+var HeroRoutingModule = (function () {
+    function HeroRoutingModule() {
+    }
+    return HeroRoutingModule;
+}());
+HeroRoutingModule = __decorate([
+    core_1.NgModule({
+        imports: [router_1.RouterModule.forChild(routes)],
+        exports: [router_1.RouterModule]
     }),
     __metadata("design:paramtypes", [])
-], HeroModule);
-exports.HeroModule = HeroModule;
-//# sourceMappingURL=hero.module.js.map
+], HeroRoutingModule);
+exports.HeroRoutingModule = HeroRoutingModule;
+//# sourceMappingURL=hero-routing.module.js.map

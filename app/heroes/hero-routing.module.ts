@@ -4,6 +4,7 @@ import { HeroComponent } from "./hero.component";
 import { HeroListComponent } from './hero-list.component';
 import { HeroDetailComponent } from './hero-detail.component';
 
+// import { HeroComponent, HeroListComponent, HeroDetailComponent } from '../heroes/';
 const routes: Routes = [
     {
         path: '',
