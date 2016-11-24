@@ -22,10 +22,10 @@ import { Observable } from 'rxjs/Observable';
                     <template ngSwitchDefault>Unknown</template>
                 </div>
             </div>
-            <hero-birthday [inBirthday]="birthday" (outBirthday)="firstName = $event">
+            <hero-birthday [inBirthday]="birthday" (outFirstName)="firstName = $event" [firstName]="firstName">
                 <pow-boost-calculator></pow-boost-calculator>
-            </hero-birthday>
-            <p>Super power boost: {{2 | exponentialStrength: 10}}</p>
+            </hero-birthday> 
+            <p>Super power boost: 2 ^ <input [(ngModel)]="strength" class="form-controller"/> = {{2 | exponentialStrength: strength}}</p>
             <svg:rect x="0" y="0" width="100" height="100"></svg:rect>
             <button (click)="touch()" [ngClass]="{active: isActive}" [disabled]="isDisabled">link</button>
             `,
@@ -153,6 +153,7 @@ export class TestComponent {
     width: number = 20;
     birthday = new Date();
     private state: string='in';
+    strength: string = '1';
 
     test = [
         { name: 'll', state: this.state},

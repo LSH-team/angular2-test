@@ -14,7 +14,8 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 export class HeroBirthdayComponent {
     birthday = new Date(2016, 11, 7);
     @Input() inBirthday = '';
-    @Output() outBirthday = new EventEmitter();
+    @Input() firstName = 'www';
+    @Output() outFirstName = new EventEmitter();
 
     toggle = true;
 
@@ -24,6 +25,7 @@ export class HeroBirthdayComponent {
 
     toggleFormat() {
         this.toggle = !this.toggle;
-        this.outBirthday.emit("www");
+        this.firstName = this.firstName == 'test'? 'www': 'test';
+        this.outFirstName.emit(this.firstName);
     }
 }
