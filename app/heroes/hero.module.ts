@@ -6,7 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 // import { HeroListComponent } from './hero-list.component';
 // import { HeroComponent } from "./hero.component";
 // import { HeroRoutingModule } from './hero-routing.module';
-import { HeroDetailComponent, HeroRoutingModule, HeroComponent, HeroListComponent} from '../heroes';
+import { HeroDetailComponent, HeroRoutingModule, HeroComponent, HeroListComponent} from '../heroes/index';
 
 @NgModule ({
     imports: [ SharedModule, HeroRoutingModule ],

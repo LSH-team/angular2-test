@@ -10,17 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var hero_component_1 = require("./hero.component");
-var hero_list_component_1 = require("./hero-list.component");
-var hero_detail_component_1 = require("./hero-detail.component");
-// import { HeroComponent, HeroListComponent, HeroDetailComponent } from '../heroes/';
+// import { HeroComponent } from "./hero.component";
+// import { HeroListComponent } from './hero-list.component';
+// import { HeroDetailComponent } from './hero-detail.component';
+var index_1 = require("../heroes/index");
 var routes = [
     {
         path: '',
-        component: hero_component_1.HeroComponent,
+        component: index_1.HeroComponent,
         children: [
-            { path: '', component: hero_list_component_1.HeroListComponent },
-            { path: ':id', component: hero_detail_component_1.HeroDetailComponent },
+            { path: '', component: index_1.HeroListComponent },
+            { path: ':id', component: index_1.HeroDetailComponent },
         ]
     },
 ];
