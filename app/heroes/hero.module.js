@@ -14,7 +14,7 @@ var shared_module_1 = require("../shared/shared.module");
 // import { HeroListComponent } from './hero-list.component';
 // import { HeroComponent } from "./hero.component";
 // import { HeroRoutingModule } from './hero-routing.module';
-var _1 = require("../heroes/");
+var heroes_1 = require("../heroes");
 var HeroModule = (function () {
     function HeroModule() {
     }
@@ -22,11 +22,11 @@ var HeroModule = (function () {
 }());
 HeroModule = __decorate([
     core_1.NgModule({
-        imports: [shared_module_1.SharedModule, _1.HeroRoutingModule],
+        imports: [shared_module_1.SharedModule, heroes_1.HeroRoutingModule],
         declarations: [
-            _1.HeroComponent,
-            _1.HeroDetailComponent,
-            _1.HeroListComponent,
+            heroes_1.HeroComponent,
+            heroes_1.HeroDetailComponent,
+            heroes_1.HeroListComponent,
         ]
     }),
     __metadata("design:paramtypes", [])
