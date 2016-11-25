@@ -25,9 +25,11 @@ import { Observable } from 'rxjs/Observable';
             <hero-birthday [inBirthday]="birthday" (outFirstName)="firstName = $event" [firstName]="firstName">
                 <pow-boost-calculator></pow-boost-calculator>
             </hero-birthday> 
-            <p>Super power boost: 2 ^ <input [(ngModel)]="strength" class="form-controller"/> = {{2 | exponentialStrength: strength}}</p>
+            <p>Super power boost: 2 ^ <input #strenth (keyup)="0" class="form-control"/> = {{2 | exponentialStrength: strenth.value}}</p>
             <svg:rect x="0" y="0" width="100" height="100"></svg:rect>
             <button (click)="touch()" [ngClass]="{active: isActive}" [disabled]="isDisabled">link</button>
+            <input #testInput placeholder="testInput" (keyup)="0" minlength="3" maxlength="10" name="testInput"/>
+            <p>{{testInput.value}}</p>
             `,
     styleUrls: ['test.component.css'],
     styles: [ 'span { color: green;}', 'h3 { background-color: yellowgreen !important;}'],
@@ -153,7 +155,6 @@ export class TestComponent {
     width: number = 20;
     birthday = new Date();
     private state: string='in';
-    strength: string = '1';
 
     test = [
         { name: 'll', state: this.state},

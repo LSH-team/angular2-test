@@ -20,7 +20,7 @@ var HeroComponent = (function () {
 }());
 HeroComponent = __decorate([
     core_1.Component({
-        template: "\n        <h2>Heroes of {{userName}}</h2>\n        <router-outlet></router-outlet>\n        ",
+        template: "\n        <h2>Heroes of {{userName}}</h2>\n        <div class=\"container\">\n            <h2>Hero Form</h2>\n            <form>\n            <div class=\"form-group\">\n                <label for=\"Name\">Name</label>\n                <input type=\"text\" class=\"form-control\" id=\"name\" required/>\n</div>\n</form>\n</div>\n        <router-outlet></router-outlet>\n        ",
         providers: [hero_service_1.HeroService],
     }),
     __metadata("design:paramtypes", [user_service_1.UserService])
