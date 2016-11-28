@@ -43,6 +43,6 @@ export class HeroSearchComponent implements OnInit {
     gotoDetail(hero: Hero):void {
         let link = ['/detail', hero.id];
         this.router.navigate(link);
-        let a = 1;
+        let a = 2;
     }
 }
